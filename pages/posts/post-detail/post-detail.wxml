@@ -1,0 +1,23 @@
+<!--post-detail.wxml-->
+<view class="container">
+    <image wx:if="{{isPlayingMusic}}" class="head-image"  src ="{{isPlayingMusic=='paused'?postData.headImgSrc:postData.headClickImgSrc}}"></image>
+    <view class="audio-container">
+        <image style="animation-play-state:{{isPlayingMusic}}" class="audio" catchtap="onMusicTap" src="http://zhuxinghan.oss-cn-beijing.aliyuncs.com/weixin/images/music/music-start.png"></image>
+    </view>
+    <view class="author-data">
+        <image class="avatar" src="http://zhuxinghan.oss-cn-beijing.aliyuncs.com/weixin/images/avatar/2.png"></image>
+        <text class="author">{{postData.author}}</text>
+        <text class="const-text">发表于</text>
+        <text class="date">{{postData.dateTime}}</text>
+    </view>
+    <text class="title">{{postData.title}}</text>
+    <view class="tool">
+        <view class="circle-img">
+            <image wx:if="{{collected}}" src="http://zhuxinghan.oss-cn-beijing.aliyuncs.com/weixin/images/icon/collection.png" catchtap="onCollectTap"></image>
+            <image wx:else src="http://zhuxinghan.oss-cn-beijing.aliyuncs.com/weixin/images/icon/collection-anti.png" catchtap="onCollectTap"></image>
+            <image class="share-img" src="http://zhuxinghan.oss-cn-beijing.aliyuncs.com/weixin/images/icon/share.png" catchtap="onShareTap"></image>
+        </view>
+        <view class="horizon"></view>
+    </view>
+    <text class="detail">{{postData.detail}}</text>
+</view>
